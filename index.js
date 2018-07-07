@@ -13,6 +13,8 @@ $(document).ready(function () {
 } else {
 		$(".mobile").hide()
 	}
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 const auth = firebase.auth();
 function siweap(a, b,) {
