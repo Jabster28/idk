@@ -2,6 +2,20 @@
 <html>
 
 <head>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAIbXhSYBCQt52sc8DGcAE8zxUE3ALac3M",
+      authDomain: "just-an-auth-test.firebaseapp.com",
+      databaseURL: "https://just-an-auth-test.firebaseio.com",
+      projectId: "just-an-auth-test",
+      storageBucket: "just-an-auth-test.appspot.com",
+      messagingSenderId: "695564154975"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114770535-2"></script>
@@ -24,30 +38,50 @@
   <a href="index.html">About</a>
   <a href="mbtc.html">Donate (for free)</a>
 </div>
-<script src"index.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAIbXhSYBCQt52sc8DGcAE8zxUE3ALac3M",
-    authDomain: "just-an-auth-test.firebaseapp.com",
-    databaseURL: "https://just-an-auth-test.firebaseio.com",
-    projectId: "just-an-auth-test",
-    storageBucket: "just-an-auth-test.appspot.com",
-    messagingSenderId: "695564154975"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="index.js"></script>
-<input id="email" placeholder="Email"></input>
-<input id="password" placeholder="Password"></input>
-  <form action="?" method="POST">
-<div class="g-recaptcha" data-sitekey="6LfuQFUUAAAAADQWDfzgetpDMdpjoTXRr-WH-dp1"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
-<button onclick="siweap()">Sign In</button>
-<button onclick="suweap()">Sign Up</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample FirebaseUI App</title>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+       * Firebase Console > Overview > Add Firebase to your web app. *
+       ***************************************************************************************** -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'loggedIn.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <h1>Welcome to My Awesome App</h1>
+    <div id="firebaseui-auth-container"></div>
   </body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+<script src="index.js"></script>
+
 
 </html>
