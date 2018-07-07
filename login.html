@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114770535-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114770535-2');
+  </script>
+
+ <link href="style.css" type="text/css" rel="stylesheet">
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+ <div class="topnav" id="myTopnav">
+  <a href="sp1.html">Scratch Project</a>
+  <a class="active" href="login.html">Login</a>
+  <a href="index.html">About</a>
+  <a href="mbtc.html">Donate (for free)</a>
+</div>
+<script src"index.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAIbXhSYBCQt52sc8DGcAE8zxUE3ALac3M",
+    authDomain: "just-an-auth-test.firebaseapp.com",
+    databaseURL: "https://just-an-auth-test.firebaseio.com",
+    projectId: "just-an-auth-test",
+    storageBucket: "just-an-auth-test.appspot.com",
+    messagingSenderId: "695564154975"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="index.js"></script>
+<input id="email" placeholder="Email"></input>
+<input id="password" placeholder="Password"></input>
+  <form action="?" method="POST">
+<div class="g-recaptcha" data-sitekey="6LfuQFUUAAAAADQWDfzgetpDMdpjoTXRr-WH-dp1"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+<button onclick="siweap()">Sign In</button>
+<button onclick="suweap()">Sign Up</button>
+  </body>
+
+</html>
