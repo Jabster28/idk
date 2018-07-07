@@ -1,3 +1,5 @@
+
+// Test commit with atom
 console.log("JS Loaded")
 $(document).ready(function () {
 	console.log("Document Ready!");
@@ -11,7 +13,7 @@ $(document).ready(function () {
 	} else {
 		$(".mobile").hide()
 	}
-		
+
 const auth = firebase.auth();
 function siweap() {
 	const email = document.getElementById('email').value;
@@ -32,5 +34,5 @@ function suweap() {
 }
 
 
-	
+
 })
