@@ -17,6 +17,7 @@ $(document).ready(function() {
 
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
+  const pass = password.value
 
   firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function(error) {
     // Handle Errors here.
