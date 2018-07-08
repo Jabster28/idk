@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-    window.location.replace(/)
+    window.location.replace()
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
