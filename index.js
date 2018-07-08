@@ -42,7 +42,10 @@ $(document).ready(function() {
       // ...
     }
   });
+function siweap() {
+  firebase.auth().signInWithEmailAndPassword(email.value, password.value)
 
+}
 
 
 })
