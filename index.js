@@ -24,6 +24,9 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // ...
 });
 
+$('.btn waves-effect waves-light col s12').on(click, () => {
+	signInWithEmailAndPassword(email, password)
+})
 
 
 
