@@ -21,12 +21,12 @@ $(function() {
 
   // Search class for focus
   $('.header-search-input').focus(
-  function(){
+    function() {
       $(this).parent('div').addClass('header-search-wrapper-focus');
-  }).blur(
-  function(){
+    }).blur(
+    function() {
       $(this).parent('div').removeClass('header-search-wrapper-focus');
-  });
+    });
 
   // Check first if any of the task is checked
   $('#task-card input:checkbox').each(function() {
@@ -39,12 +39,12 @@ $(function() {
   });
 
   // Check Uncheck function
-  function checkbox_check(el){
-      if (!$(el).is(':checked')) {
-          $(el).next().css('text-decoration', 'none'); // or addClass
-      } else {
-          $(el).next().css('text-decoration', 'line-through'); //or addClass
-      }
+  function checkbox_check(el) {
+    if (!$(el).is(':checked')) {
+      $(el).next().css('text-decoration', 'none'); // or addClass
+    } else {
+      $(el).next().css('text-decoration', 'line-through'); //or addClass
+    }
   }
 
   /*----------------------
@@ -74,16 +74,16 @@ $(function() {
   // Materialize Parallax
   $('.parallax').parallax();
   $('.modal-trigger').leanModal({
-      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-      opacity: .5, // Opacity of modal background
-      in_duration: 300, // Transition in duration
-      out_duration: 200, // Transition out duration
-      ready: function() {
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: .5, // Opacity of modal background
+    in_duration: 300, // Transition in duration
+    out_duration: 200, // Transition out duration
+    ready: function() {
       //alert('Ready');
-      }, // Callback for Modal open
-      complete: function() {
+    }, // Callback for Modal open
+    complete: function() {
       //alert('Closed');
-      } // Callback for Modal close
+    } // Callback for Modal close
   });
 
   // Materialize scrollSpy
@@ -103,20 +103,20 @@ $(function() {
 
   // FULL SCREEN MENU (Layout 02)
   $('.menu-sidebar-collapse').sideNav({
-        menuWidth: 240,
-        edge: 'left', // Choose the horizontal origin
-        //defaultOpen:true // Set if default menu open is true
-      });
+    menuWidth: 240,
+    edge: 'left', // Choose the horizontal origin
+    //defaultOpen:true // Set if default menu open is true
+  });
 
   // HORIZONTAL MENU (Layout 03)
   $('.dropdown-menu').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: true, // Activate on hover
-      gutter: 0, // Spacing from edge
-      belowOrigin: true // Displays dropdown below the button
-    });
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: true, // Activate on hover
+    gutter: 0, // Spacing from edge
+    belowOrigin: true // Displays dropdown below the button
+  });
 
 
   //Main Left Sidebar Chat
@@ -139,12 +139,12 @@ $(function() {
 
   // Perfect Scrollbar
   $('select').not('.disabled').material_select();
-    var leftnav = $(".page-topbar").height();
-    var leftnavHeight = window.innerHeight - leftnav;
+  var leftnav = $(".page-topbar").height();
+  var leftnavHeight = window.innerHeight - leftnav;
   $('.leftside-navigation').height(leftnavHeight).perfectScrollbar({
     suppressScrollX: true
   });
-    var righttnav = $("#chat-out").height();
+  var righttnav = $("#chat-out").height();
   $('.rightside-navigation').height(righttnav).perfectScrollbar({
     suppressScrollX: true
   });
@@ -156,22 +156,17 @@ $(function() {
       (!document.mozFullScreen && !document.webkitIsFullScreen)) {
       if (document.documentElement.requestFullScreen) {
         document.documentElement.requestFullScreen();
-      }
-      else if (document.documentElement.mozRequestFullScreen) {
+      } else if (document.documentElement.mozRequestFullScreen) {
         document.documentElement.mozRequestFullScreen();
-      }
-      else if (document.documentElement.webkitRequestFullScreen) {
+      } else if (document.documentElement.webkitRequestFullScreen) {
         document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
       }
-    }
-    else {
+    } else {
       if (document.cancelFullScreen) {
         document.cancelFullScreen();
-      }
-      else if (document.mozCancelFullScreen) {
+      } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
-      }
-      else if (document.webkitCancelFullScreen) {
+      } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen();
       }
     }
@@ -187,13 +182,11 @@ $(function() {
     $('.toc-wrapper').pushpin({
       top: $('nav').height()
     });
-  }
-  else if ($('#index-banner').length) {
+  } else if ($('#index-banner').length) {
     $('.toc-wrapper').pushpin({
       top: $('#index-banner').height()
     });
-  }
-  else {
+  } else {
     $('.toc-wrapper').pushpin({
       top: 0
     });
@@ -216,8 +209,7 @@ $(function() {
       $(this).toggleClass('container');
       if ($(this).hasClass('container')) {
         toggleContainersButton.text("Turn off Containers");
-      }
-      else {
+      } else {
         toggleContainersButton.text("Turn on Containers");
       }
     });
@@ -228,8 +220,7 @@ $(function() {
     try {
       document.createEvent("TouchEvent");
       return true;
-    }
-    catch (e) {
+    } catch (e) {
       return false;
     }
   }
@@ -240,18 +231,18 @@ $(function() {
   }
 
   //LINE CHART WITH AREA IN SIDEBAR
-    new Chartist.Line('#ct2-chart', {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8],
-        series: [
-            [5, 9, 7, 8, 5, 3, 5, 4]
-        ]
-    }, {
-        low: 0,
-        showArea: true
-    });
+  new Chartist.Line('#ct2-chart', {
+    labels: [1, 2, 3, 4, 5, 6, 7, 8],
+    series: [
+      [5, 9, 7, 8, 5, 3, 5, 4]
+    ]
+  }, {
+    low: 0,
+    showArea: true
+  });
 
   //Trending chart for small screen
-  if(window_width <= 480){
+  if (window_width <= 480) {
     $("#trending-line-chart").attr({
       height: '200'
     });
