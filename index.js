@@ -42,10 +42,12 @@ $(document).ready(function() {
       // ...
     }
   });
-var siweap = function () {
-  firebase.auth().signInWithEmailAndPassword(email.value, password.value)
 
-}
+
+$(".abc123").click(function() {
+
+  firebase.auth().signInWithEmailAndPassword($("#email").val(), $("#password").val());
+});
 
 
 })
