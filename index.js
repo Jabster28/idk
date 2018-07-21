@@ -1,4 +1,5 @@
 // Test commit with atom
+// Test commit with Git Gui
 console.log("JS Loaded")
 $(document).ready(function() {
   console.log("Document Ready!");
